@@ -30,6 +30,11 @@ jobs:
           echo "events ${{ github.event.inputs.reports }}"
       - if: github.event.inputs.reports == 'true'
         name: build reports
-        run: echo "oh my!"
-      
+        run: |
+          mkdir reports
+          echo "oh my!" >> reports/report.html
+      - uses: actions/upload-artifact@v1
+        with:
+          name: Package
+          path: reports
         
