@@ -1,0 +1,23 @@
+name: Build2
+
+on:
+  push:
+    branches:
+      - '*/*'
+      - master
+
+jobs:
+  build:
+    timeout-minutes: 5
+    runs-on: ubuntu-18.04
+    env:
+      CI: true
+      GITHUB_BRANCH: ${{ github.ref }}
+      GITHUB_TOKEN: ${{ github.token }}
+    steps:
+      - name: build project
+        run: |
+          echo "Log level: $GITHUB_BRANCH"
+          echo "Tags: $GITHUB_TOKEN"
+      
+        
