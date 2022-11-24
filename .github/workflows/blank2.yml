@@ -23,6 +23,10 @@ jobs:
       GITHUB_BRANCH: ${{ github.ref }}
       GITHUB_TOKEN: ${{ github.token }}
     steps:
+      - name: Setup Java JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
       - name: build project
         run: |
           echo "Log level: $GITHUB_BRANCH"
