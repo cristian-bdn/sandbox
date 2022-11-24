@@ -27,7 +27,8 @@ jobs:
         run: |
           echo "Log level: $GITHUB_BRANCH"
           echo "Tags: $GITHUB_TOKEN"
-      - if: github.event.inputs.reports == true
+          echo "events ${{ github.event.inputs.reports }}"
+      - if: github.event.inputs.reports == 'true'
         name: build reports
         run: echo "oh my!"
       
