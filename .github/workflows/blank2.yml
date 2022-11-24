@@ -36,6 +36,6 @@ jobs:
       - if: github.event.inputs.reports == 'true'
         uses: actions/upload-artifact@v1
         with:
-          name: Package
+          name: 'Reports'
           path: reports
         
