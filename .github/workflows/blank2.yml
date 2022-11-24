@@ -6,6 +6,13 @@ on:
       - '*/*'
       - master
       - main
+  workflow_dispatch:
+    inputs:
+      reports:
+        description: 'Generate Reports'
+        type: boolean
+        required: false
+        default: false
 
 jobs:
   build:
@@ -20,5 +27,8 @@ jobs:
         run: |
           echo "Log level: $GITHUB_BRANCH"
           echo "Tags: $GITHUB_TOKEN"
+      - if: github.event.inputs.reports == true
+        name: build reports
+        run: echo "oh my!"
       
         
