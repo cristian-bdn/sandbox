@@ -16,7 +16,7 @@ jobs:
       GITHUB_TOKEN: ${{ github.token }}
     steps:
       - name: build project
-      - run: |
+        run: |
           echo "Log level: $GITHUB_BRANCH"
           echo "Tags: $GITHUB_TOKEN"
       
